@@ -1,2 +1,2 @@
-# -apps-only.github.io
+# apps-only.github.io
 A blog
