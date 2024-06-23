@@ -1,31 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
+    <script src="https://unpkg.com/sober/dist/sober.min.js"></script>
+    <script src="./icon-text.js"></script>
+    <script src="./app-info.js"></script>
     <style>
-        /* 在这里添加您的CSS样式 */
-        body {
-            font-family: Arial, sans-serif;
+        body,
+        s-page {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
         }
-        h1 {
-            color: #333;
+
+        s-top-app-bar {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 480px;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
+
 <body>
-    <h1>Welcome to My GitHub Pages Site</h1>
-    <script>
-        // 在这里添加您的JavaScript代码
-        console.log('Welcome to My GitHub Pages Site');
-    </script>
+    <s-page theme="auto">
+        <s-top-app-bar>
+            <!--标题-->
+            <div slot="headline">Apps Only</div>
+            <!--右侧操作按钮-->
+            <s-icon-button slot="action">
+                <s-icon type="search"></s-icon>
+            </s-icon-button>
+        </s-top-app-bar>
+        <div class="container" style="background-color: burlywood;">
+            <div class="column">
+                <app-info
+                    logo="https://boybeak.github.io/images/justtodo-icon-256.png"
+                    title="JustTodo"
+                    developer="boybeak"
+                    description="A todo app for macOS"
+                >
+                <div slot="app-downloads" class="app-downloads">
+                    <icon-text text="Github" link="https://github.com/boybeak/JustTodo">
+                        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>github</title><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" /></svg>
+                    </icon-text>
+                </div>
+            </app-info>
+            </div>
+            <div class="column">
+                <img src="./res/todo.png" height="400px">
+            </div>
+        </div>
+        <div class="container" style="background-color: darkseagreen;">
+            <div class="column">
+                <img src="./res/desk-note.png">
+            </div>
+            <div class="column">
+                <app-info
+                    logo="https://boybeak.github.io/images/desknote-icon-256.png"
+                    title="DeskNote"
+                    developer="boybeak"
+                    description="A desktop note app for macOS"
+                >
+                <div slot="app-downloads" class="app-downloads">
+                    <icon-text text="Github" link="https://github.com/boybeak/DeskNote">
+                        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>github</title><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" /></svg>
+                    </icon-text>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="background-color: bisque;">
+            <div class="column">
+                <app-info
+                    logo="https://boybeak.github.io/images/translator-icon-256.png"
+                    title="Translator"
+                    developer="boybeak"
+                    description="A translator app for macOS"
+                >
+                <div slot="app-downloads" class="app-downloads">
+                    <icon-text text="Github" link="https://github.com/boybeak/TranslatorDocs">
+                        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>github</title><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" /></svg>
+                    </icon-text>
+                </div>
+            </div>
+            <div class="column">
+                <img src="./res/translator.png">
+            </div>
+        </div>
+    </s-page>
 </body>
+<style>
+    #a {
+        font-weight: bold;
+    }
+</style>
 </html>
