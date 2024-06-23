@@ -1,56 +1,8 @@
 <script setup>
 import AppItem from './components/AppItem.vue';
-import todoPrePath from '@/assets/images/todo.png';
-import deskNotePrePath from '@/assets/images/desk-note.png';
-import translatorPrePath from '@/assets/images/translator.png';
 
-const appItems = [
-{
-    logo: 'https://boybeak.github.io/images/justtodo-icon-256.png',
-    name: 'JustTodo',
-    preview: todoPrePath,
-    developer: 'boybeak',
-    description: 'A macOS todo app',
-    background: 'lightskyblue',
-    links: [
-        {
-            icon: '',
-            name: '',
-            url: ''
-        }
-    ]
-},
-{
-    logo: 'https://boybeak.github.io/images/desknote-icon-256.png',
-    name: 'DeskNote',
-    preview: deskNotePrePath,
-    developer: 'boybeak',
-    description: 'A macOS todo app',
-    background: 'darkseagreen',
-    links: [
-        {
-            icon: '',
-            name: '',
-            url: ''
-        }
-    ]
-},
-{
-    logo: 'https://boybeak.github.io/images/translator-icon-256.png',
-    name: 'Translator',
-    preview: translatorPrePath,
-    developer: 'boybeak',
-    description: 'A macOS todo app',
-    background: 'burlywood',
-    links: [
-        {
-            icon: '',
-            name: '',
-            url: ''
-        }
-    ]
-}
-]
+import appItems from '@/assets/apps.json';
+
 </script>
 
 <template>
