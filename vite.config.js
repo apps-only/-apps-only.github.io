@@ -9,7 +9,14 @@ export default defineConfig({
     outDir: 'docs'
   },
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          //允许s-开头的自定义组件
+          isCustomElement: (tag) => tag.startsWith('s-')
+        }
+      }
+    })
   ],
   resolve: {
     alias: {

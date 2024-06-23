@@ -1,47 +1,95 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script setup>
+import AppItem from './components/AppItem.vue';
+import todoPrePath from '@/assets/images/todo.png';
+import deskNotePrePath from '@/assets/images/desk-note.png';
+import translatorPrePath from '@/assets/images/translator.png';
+
+const appItems = [
+{
+    logo: 'https://boybeak.github.io/images/justtodo-icon-256.png',
+    name: 'JustTodo',
+    preview: todoPrePath,
+    developer: 'boybeak',
+    description: 'A macOS todo app',
+    background: 'lightskyblue',
+    links: [
+        {
+            icon: '',
+            name: '',
+            url: ''
+        }
+    ]
+},
+{
+    logo: 'https://boybeak.github.io/images/desknote-icon-256.png',
+    name: 'DeskNote',
+    preview: deskNotePrePath,
+    developer: 'boybeak',
+    description: 'A macOS todo app',
+    background: 'darkseagreen',
+    links: [
+        {
+            icon: '',
+            name: '',
+            url: ''
+        }
+    ]
+},
+{
+    logo: 'https://boybeak.github.io/images/translator-icon-256.png',
+    name: 'Translator',
+    preview: translatorPrePath,
+    developer: 'boybeak',
+    description: 'A macOS todo app',
+    background: 'burlywood',
+    links: [
+        {
+            icon: '',
+            name: '',
+            url: ''
+        }
+    ]
+}
+]
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <s-page id="app" theme="auto">
+    <s-top-app-bar>
+      <!--标题-->
+      <div slot="headline">Apps Only</div>
+      <!--右侧操作按钮-->
+      <s-icon-button slot="action">
+        <s-icon type="search"></s-icon>
+      </s-icon-button>
+    </s-top-app-bar>
+    <AppItem v-for="(item, index) in appItems" :appItem="item" :index="index"></AppItem>
+  </s-page>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+body,
+s-page {
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+s-top-app-bar {
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.container {
+  display: flex;
+  height: 480px;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 </style>
