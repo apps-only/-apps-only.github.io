@@ -32,4 +32,9 @@ defineProps(['appItem', 'index'])
 .app-view-preview {
     max-height: 400px;
 }
+@media (max-width: 800px) {
+  .app-view {
+    flex-direction: column;
+  }
+}
 </style>

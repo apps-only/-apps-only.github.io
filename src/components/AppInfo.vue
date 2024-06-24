@@ -1,4 +1,5 @@
 <script setup>
+import LinkButton from './LinkButton.vue'
 defineProps(['appItem'])
 </script>
 
@@ -14,21 +15,16 @@ defineProps(['appItem'])
         <div class="app-description" id="app-description">
             <p>{{ appItem.description }}</p>
         </div>
-        <div class="app-downloads"></div>
+        <div class="app-downloads">
+            <LinkButton v-for="link in appItem.links" :link="link"></LinkButton>
+        </div>
     </div>
 </template>
 
 <style scoped>
 .app-container {
-    display: grid;
-    grid-template-areas: 
-        "logo name"
-        "logo developer"
-        "logo ."
-        "description description"
-        "downloads downloads";
-    grid-template-rows: auto auto auto 1fr auto;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
     align-items: center; /* Ensures all items in the row are centered */
@@ -52,7 +48,6 @@ defineProps(['appItem'])
 }
 .app-developer {
     font-size: 1em;
-    margin-top: 4px;
 }
 .app-description {
     grid-area: description;
