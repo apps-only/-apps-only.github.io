@@ -30,12 +30,12 @@ const getBackgroundStyle = (item) => {
         <img v-else class="app-view-preview" :src="getImageUrl(appItem.preview)"></img>
     </div>
 </div>
+<div style="height: 96px;"></div>
 </template>
 
 <style scoped>
 .app-view {
     display: flex;
-    height: 480px;
 }
 .app-view-column {
     display: flex;
@@ -43,6 +43,7 @@ const getBackgroundStyle = (item) => {
     flex: 1;
     align-items: center;
     justify-content: center;
+    padding: 8px;
 }
 .app-view-preview {
     max-height: 400px;
