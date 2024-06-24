@@ -63,7 +63,9 @@ function openUrl(url) {
         </s-icon>
       </s-icon-button>
     </s-top-app-bar>
+    <div style="height: 120px"></div>
     <AppItem v-for="(item, index) in appItems" :appItem="item" :index="index"></AppItem>
+    <div style="height: 120px"></div>
   </s-page>
 </template>
 
