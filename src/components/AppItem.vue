@@ -2,17 +2,20 @@
 import AppInfo from './AppInfo.vue';
 defineProps(['appItem', 'index'])
 
+const getImageUrl = (imageName) => {
+  return new URL(`../assets/images/${imageName}`, import.meta.url).href;
+};
 </script>
 
 <template>
 <div class="app-view" :style="{backgroundColor: appItem.background}">
     <div class="app-view-column">
         <AppInfo v-if="index % 2 == 0" :appItem="appItem"></AppInfo>
-        <img v-else class="app-view-preview" :src="appItem.preview"></img>
+        <img v-else class="app-view-preview" :src="getImageUrl(appItem.preview)"></img>
     </div>
     <div class="app-view-column">
         <AppInfo v-if="index % 2 == 1" :appItem="appItem"></AppInfo>
-        <img v-else class="app-view-preview" :src="appItem.preview"></img>
+        <img v-else class="app-view-preview" :src="getImageUrl(appItem.preview)"></img>
     </div>
 </div>
 </template>

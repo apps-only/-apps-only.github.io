@@ -2,7 +2,7 @@
     {
         "logo": "https://boybeak.github.io/images/justtodo-icon-256.png",
         "name": "JustTodo",
-        "preview": "/src/assets/images/todo.png",
+        "preview": "todo.png",
         "developer": "boybeak",
         "description": "A macOS todo app",
         "background": "lightskyblue",
@@ -17,7 +17,7 @@
     {
         "logo": "https://boybeak.github.io/images/desknote-icon-256.png",
         "name": "DeskNote",
-        "preview": "/src/assets/images/desk-note.png",
+        "preview": "desk-note.png",
         "developer": "boybeak",
         "description": "A macOS todo app",
         "background": "darkseagreen",
@@ -32,7 +32,7 @@
     {
         "logo": "https://boybeak.github.io/images/translator-icon-256.png",
         "name": "Translator",
-        "preview": "/src/assets/images/translator.png",
+        "preview": "translator.png",
         "developer": "boybeak",
         "description": "A macOS todo app",
         "background": "burlywood",

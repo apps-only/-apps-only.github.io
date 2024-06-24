@@ -2,9 +2,6 @@
 import AppItem from './components/AppItem.vue';
 
 import appItems from '@/assets/apps.json';
-import todoPng from '@/assets/images/todo.png'
-
-console.log('todoPng=', todoPng)
 
 </script>
 
