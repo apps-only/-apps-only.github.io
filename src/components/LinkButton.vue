@@ -18,10 +18,10 @@ function openUrl(url) {
 #container {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid var(--s-color-on-surface);
-    border-radius: 8px;
-    font-size: 1.2em;
+    border-radius: 16px;
+    font-size: 1em;
 }
 #icon {
     color: var(--s-color-on-surface);
