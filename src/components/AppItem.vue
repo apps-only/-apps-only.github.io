@@ -1,14 +1,26 @@
 <script setup>
 import AppInfo from './AppInfo.vue';
+import { ref } from 'vue';
 defineProps(['appItem', 'index'])
 
 const getImageUrl = (imageName) => {
   return new URL(`../assets/images/${imageName}`, import.meta.url).href;
 };
+
+const color1 = ref('red');
+const color2 = ref('#1e90ff');
+
+const getBackgroundStyle = (item) => {
+  return {
+    background: `radial-gradient(circle, ${item.background}, transparent)`
+  };
+};
 </script>
 
 <template>
-<div class="app-view" :style="{backgroundColor: appItem.background}">
+    <!-- :style="{backgroundColor: appItem.background}" -->
+    <!-- :style="index % 2 == 1 ? getBackgroundStyle(appItem) : null" -->
+<div class="app-view">
     <div class="app-view-column">
         <AppInfo v-if="index % 2 == 0" :appItem="appItem"></AppInfo>
         <img v-else class="app-view-preview" :src="getImageUrl(appItem.preview)"></img>

@@ -4,7 +4,7 @@
         "name": "JustTodo",
         "preview": "todo.png",
         "developer": "boybeak",
-        "description": "A macOS todo app",
+        "description": "May be the simplest todo app for macOS.",
         "background": "lightskyblue",
         "links": [
             {
@@ -19,7 +19,7 @@
         "name": "DeskNote",
         "preview": "desk-note.png",
         "developer": "boybeak",
-        "description": "A macOS todo app",
+        "description": "A Windows 7 style desk note for macOS, support customize colors, transparency, font size and style.",
         "background": "darkseagreen",
         "links": [
             {
@@ -34,7 +34,7 @@
         "name": "Translator",
         "preview": "translator.png",
         "developer": "boybeak",
-        "description": "A macOS todo app",
+        "description": "A translator app for macOS, docked on menu bar.",
         "background": "burlywood",
         "links": [
             {
