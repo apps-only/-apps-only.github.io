@@ -112,7 +112,7 @@ s-page {
   padding: 0;
   background:
     radial-gradient(circle at 75% 30%, rgb(135, 206, 250), rgba(135, 206, 250, 0.05), transparent),
-    radial-gradient(circle at 25% 50%, rgb(143, 188, 143), rgba(143, 188, 143, 0.05), transparent),
+    radial-gradient(circle at 25% 60%, rgb(143, 188, 143), rgba(143, 188, 143, 0.05), transparent),
     radial-gradient(circle at 75% 80%, rgb(222, 184, 135), rgb(222, 184, 135, 0.05), transparent);
 }
 
