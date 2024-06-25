@@ -1,11 +1,31 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
 import AppItem from './components/AppItem.vue';
-
 import appItems from '@/assets/apps.json';
 
 function openUrl(url) {
   window.open(url, '_blank')
 }
+
+const isDarkMode = ref(false);
+
+const checkDarkMode = () => {
+  isDarkMode.value = window.matchMedia('(prefers-color-scheme: dark)').matches;
+};
+
+onMounted(() => {
+  // 初始化时检查暗色模式
+  checkDarkMode();
+
+  // 监听暗色模式的变化
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', checkDarkMode);
+
+  // 清理事件监听器
+  onUnmounted(() => {
+    mediaQuery.removeEventListener('change', checkDarkMode);
+  });
+});
 
 </script>
 
@@ -63,7 +83,18 @@ function openUrl(url) {
         </s-icon>
       </s-icon-button>
     </s-top-app-bar>
-    <div style="height: 120px"></div>
+    <div v-if="isDarkMode" style="height: 120px; position: relative;">
+      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 8px; width: 20px; height: 20px;">
+      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 88px; top: 16px; width: 24px; height: 24px;">
+      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 32px; top: 48px; width: 16px; height: 16px;">
+
+      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 16px; top: 64px; width: 8px; height: 8px;">
+      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 48px; top: 88px; width: 12px; height: 12px;">
+      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 64px; top: 32px; width: 8px; height: 8px;">
+
+      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 20px; bottom: 0px; width: 16px; height: 16px;">
+    </div>
+    <div v-else style="height: 120px"></div>
     <AppItem v-for="(item, index) in appItems" :appItem="item" :index="index"></AppItem>
     <div style="height: 120px"></div>
   </s-page>
@@ -79,9 +110,9 @@ s-page {
   margin: 0;
   padding: 0;
   background:
-    radial-gradient(circle at 75% 30%, rgb(135, 206, 250), rgba(135, 206, 250, 0.1), transparent),
-    radial-gradient(circle at 25% 50%, rgb(143, 188, 143), rgba(143, 188, 143, 0.1), transparent),
-    radial-gradient(circle at 75% 80%, rgb(222, 184, 135), rgb(222, 184, 135, 0.1), transparent);
+    radial-gradient(circle at 75% 30%, rgb(135, 206, 250), rgba(135, 206, 250, 0.05), transparent),
+    radial-gradient(circle at 25% 50%, rgb(143, 188, 143), rgba(143, 188, 143, 0.05), transparent),
+    radial-gradient(circle at 75% 80%, rgb(222, 184, 135), rgb(222, 184, 135, 0.05), transparent);
 }
 
 s-top-app-bar {
