@@ -88,11 +88,12 @@ onMounted(() => {
       <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 88px; top: 16px; width: 24px; height: 24px;">
       <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 32px; top: 48px; width: 16px; height: 16px;">
 
-      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 16px; top: 64px; width: 8px; height: 8px;">
-      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 48px; top: 88px; width: 12px; height: 12px;">
-      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 64px; top: 32px; width: 8px; height: 8px;">
+      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 72px; top: 56px; width: 8px; height: 8px;">
+      <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 80px; top: 88px; width: 12px; height: 12px;">
+      <!-- <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 64px; top: 32px; width: 8px; height: 8px;"> -->
 
       <img src="@/assets/images/star-four-points.svg" style="position: absolute; left: 20px; bottom: 0px; width: 16px; height: 16px;">
+      <img src="@/assets/images/moon-solid.svg" style="position: absolute; left: 40px; top: 0px; width: 32px; height: 32px;">
     </div>
     <div v-else style="height: 120px"></div>
     <AppItem v-for="(item, index) in appItems" :appItem="item" :index="index"></AppItem>
